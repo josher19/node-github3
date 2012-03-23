@@ -1,10 +1,10 @@
-# JavaScript GitHub API for node.js
+# JavaScript GitHub API for Node.JS
 
-A node.js module, which provides an object oriented wrapper for the GitHub v3 API. 
+A Node.JS module, which provides an object oriented wrapper for the GitHub v3 API. 
 
 ## Installation
 
-  Install with the node package manager [npm](http://npmjs.org/):
+  Install with the Node.JS package manager [npm](http://npmjs.org/):
 
       $ npm install github3
 
@@ -37,7 +37,7 @@ method lists all followers of a given GitHub user. Is is part of the user API. I
 takes the user name as first argument and a callback as last argument. Once the 
 follower list is returned from the server, the callback is called.
 
-Like in node.js callbacks are always the last argument. If the functions fails an 
+Like in Node.JS, callbacks are always the last argument. If the functions fails an 
 error object is passed as first argument to the callback.
 
 ## Authentication

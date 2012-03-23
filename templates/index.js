@@ -13,11 +13,9 @@ var Fs = require("fs");
 var Util = require("./../../util");
 var error = require("./../../error");
 
-var Routes = JSON.parse(Fs.readFileSync(__dirname + "/routes.json", "utf8"));
-
 var GithubHandler = module.exports = function(client) {
     this.client = client;
-    this.routes = Routes;
+    this.routes = JSON.parse(Fs.readFileSync(__dirname + "/routes.json", "utf8"));
 };
 
 var proto = {

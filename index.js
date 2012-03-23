@@ -455,6 +455,8 @@ var Client = module.exports = function(config) {
         if (hasBody) {
             if (format == "json")
                 query = JSON.stringify(query);
+            else
+                query = query.join("&");
             headers["content-length"] = query.length;
             headers["content-type"] = format == "json"
                 ? "application/json"
@@ -521,7 +523,7 @@ var Client = module.exports = function(config) {
 
         // write data to request body
         if (hasBody && query.length)
-            req.write(query.join("&") + "\n");
+            req.write(query + "\n");
         req.end();
     };
 }).call(Client.prototype);

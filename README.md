@@ -6,7 +6,7 @@ A Node.JS module, which provides an object oriented wrapper for the GitHub v3 AP
 
   Install with the Node.JS package manager [npm](http://npmjs.org/):
 
-      $ npm install github3
+      $ npm install node-github
 
 or
 
@@ -18,20 +18,20 @@ or
 
 ## Example
 
-Print all followers of the user "fjakobs" to the console.
+Print all followers of the user "mikedeboer" to the console.
 
-    var GitHubApi = require("github3");
+    var GitHubApi = require("node-github");
 
     var github = new GitHubApi({
         version: "3.0.0"
     });
     github.user.getFollowingFromUser({
-        user: 'fjakobs'
+        user: "mikedeboer"
     }, function(err, res) {
         console.log(JSON.stringify(res));
     });
 
-First the _GitHubApi_ class is imported from the _github3_ module. This class provides 
+First the _GitHubApi_ class is imported from the _node-github_ module. This class provides 
 access to all of GitHub's APIs (e.g. user, issues or repo APIs). The _getFollowingFromUser_ 
 method lists all followers of a given GitHub user. Is is part of the user API. It 
 takes the user name as first argument and a callback as last argument. Once the 

@@ -1,5 +1,5 @@
 {
-    "name" : "github3",
+    "name" : "node-github",
     "version" : "0.0.1",
     "description" : "Wrapper for the GitHub API",
     "author": "Mike de Boer <mike@c9.io>",
@@ -15,7 +15,7 @@
         "asyncjs": ">=0.0.x",
         "oauth": ">=0.8.x"
     },
-    "main" : "./lib/github",
+    "main" : ".",
     "scripts": {
         "test": "node ./test/all.js"  
     },

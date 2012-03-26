@@ -107,8 +107,7 @@ Note that a connection to the internet is required to run the tests.
 
 ## TODO
 
-* generate API documentation
-* Documentation
+* generate Client documentation
 
 ## LICENSE
 

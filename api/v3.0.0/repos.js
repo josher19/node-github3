@@ -110,7 +110,7 @@ var repos = module.exports = {
      *  ##### Params on the `msg` object:
      * 
      *  - org (String): Required. 
-     *  - type (String): Optional. Possible values: `all`, `public``, `member`. Default: `all`. Validation rule: ` ^(all|public|member)$ `.
+     *  - type (String): Optional. Possible values: `all`, `public`, `member`. Default: `all`. Validation rule: ` ^(all|public|member)$ `.
      *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
      *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/

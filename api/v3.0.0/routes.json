@@ -1528,8 +1528,8 @@
                     "type": "String",
                     "required": false,
                     "validation": "^(all|public|member)$",
-                    "invalidmsg": "Possible values: `all`, `public``, `member`. Default: `all`.",
-                    "description": "Possible values: `all`, `public``, `member`. Default: `all`."
+                    "invalidmsg": "Possible values: `all`, `public`, `member`. Default: `all`.",
+                    "description": "Possible values: `all`, `public`, `member`. Default: `all`."
                 },
                 "$page": null,
                 "$per_page": null

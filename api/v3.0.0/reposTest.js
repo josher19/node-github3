@@ -134,7 +134,7 @@ var test = module.exports = {
         );
     },
 
-    "test: undefined /repos/:user/:repo (get)":  function(next) {
+    "test: GET /repos/:user/:repo (get)":  function(next) {
         var self = this;
         this.client.authenticate({
             type: "token",
@@ -306,7 +306,7 @@ var test = module.exports = {
         );
     },
 
-    "test:  /repos/:user/:repo/collaborators/:collabuser (getCollaborator)":  function(next) {
+    "test: GET /repos/:user/:repo/collaborators/:collabuser (getCollaborator)":  function(next) {
         var self = this;
         this.client.authenticate({
             type: "token",
@@ -389,7 +389,7 @@ var test = module.exports = {
         );
     },
 
-    "test:  /repos/:user/:repo/commits/:sha (getCommit)":  function(next) {
+    "test: GET /repos/:user/:repo/commits/:sha (getCommit)":  function(next) {
         var self = this;
         this.client.authenticate({
             type: "token",
@@ -430,7 +430,7 @@ var test = module.exports = {
         );
     },
 
-    "test:  /repos/:user/:repo/commits/:sha/comments (getCommitComments)":  function(next) {
+    "test: GET /repos/:user/:repo/commits/:sha/comments (getCommitComments)":  function(next) {
         var self = this;
         this.client.authenticate({
             type: "token",
@@ -724,7 +724,7 @@ var test = module.exports = {
         );
     },
 
-    "test:  /repos/:user/:repo/keys/:id (updateKey)":  function(next) {
+    "test: PUT /repos/:user/:repo/keys/:id (updateKey)":  function(next) {
         var self = this;
         this.client.authenticate({
             type: "token",
@@ -826,7 +826,7 @@ var test = module.exports = {
         );
     },
 
-    "test:  /user/watched/:user/:repo (getWatching)":  function(next) {
+    "test: GET /user/watched/:user/:repo (getWatching)":  function(next) {
         var self = this;
         this.client.authenticate({
             type: "token",

@@ -118,6 +118,11 @@ var main = module.exports = function(versions) {
                     // we ended up at an API definition part!
                     var parts = messageType.split("/");
                     var section = Util.toCamelCase(parts[1].toLowerCase());
+                    if (!block.method) {
+                        throw new Error("No HTTP method specified for " + messageType +
+                            "in section " + section);
+                    }
+
                     parts.splice(0, 2);
                     var funcName = Util.toCamelCase(parts.join("-"));
                     var comment = createComment(block.params, section, funcName, "    ");

@@ -1574,6 +1574,7 @@
         
         "get": {
             "url": "/repos/:user/:repo",
+            "method": "GET",
             "params": {
                 "$user": null,
                 "$repo": null
@@ -1671,7 +1672,7 @@
         
         "get-collaborator": {
             "url": "/repos/:user/:repo/collaborators/:collabuser",
-            "method": "",
+            "method": "GET",
             "params": {
                 "$user": null,
                 "$repo": null,
@@ -1726,7 +1727,7 @@
         
         "get-commit": {
             "url": "/repos/:user/:repo/commits/:sha",
-            "method": "",
+            "method": "GET",
             "params": {
                 "$user": null,
                 "$repo": null,
@@ -1747,7 +1748,7 @@
         
         "get-commit-comments": {
             "url": "/repos/:user/:repo/commits/:sha/comments",
-            "method": "",
+            "method": "GET",
             "params": {
                 "$user": null,
                 "$repo": null,
@@ -1913,7 +1914,7 @@
         
         "update-key": {
             "url": "/repos/:user/:repo/keys/:id",
-            "method": "",
+            "method": "PUT",
             "params": {
                 "$user": null,
                 "$repo": null,
@@ -1965,7 +1966,7 @@
         
         "get-watching": {
             "url": "/user/watched/:user/:repo",
-            "method": "",
+            "method": "GET",
             "params": {
                 "$user": null,
                 "$repo": null,

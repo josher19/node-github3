@@ -1,11 +1,13 @@
-/**
- * Copyright 2012 Cloud9 IDE, Inc.
+/** 
+ *  mixin user
+ * 
+ *  Copyright 2012 Cloud9 IDE, Inc.
  *
- * This product includes software developed by
- * Cloud9 IDE, Inc (http://c9.io).
+ *  This product includes software developed by
+ *  Cloud9 IDE, Inc (http://c9.io).
  *
- * Author: Mike de Boer <mike@c9.io>
- */
+ *  Author: Mike de Boer <mike@c9.io>
+ **/
 
 "use strict";
 
@@ -19,9 +21,12 @@ var user = module.exports = {
 (function() {
     /**
      *  user#getFrom(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
      **/
     this.getFrom = function(msg, block, callback) {
         var self = this;
@@ -55,8 +60,12 @@ var user = module.exports = {
 
     /**
      *  user#get(msg, callback) -> null
-     *
-     *  No params.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  No params, simply pass an empty Object literal `{}`
      **/
     this.get = function(msg, block, callback) {
         var self = this;
@@ -90,15 +99,18 @@ var user = module.exports = {
 
     /**
      *  user#update(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param name (String): Optional. 
-     *    - Param email (String): Optional. 
-     *    - Param blog (String): Optional. 
-     *    - Param company (String): Optional. 
-     *    - Param location (String): Optional. 
-     *    - Param hireable (Boolean): Optional. 
-     *    - Param bio (String): Optional. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - name (String): Optional. 
+     *  - email (String): Optional. 
+     *  - blog (String): Optional. 
+     *  - company (String): Optional. 
+     *  - location (String): Optional. 
+     *  - hireable (Boolean): Optional. 
+     *  - bio (String): Optional. 
      **/
     this.update = function(msg, block, callback) {
         var self = this;
@@ -132,10 +144,13 @@ var user = module.exports = {
 
     /**
      *  user#getEmails(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getEmails = function(msg, block, callback) {
         var self = this;
@@ -169,8 +184,12 @@ var user = module.exports = {
 
     /**
      *  user#addEmails(msg, callback) -> null
-     *
-     *  No params.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  No params, simply pass an empty Object literal `{}`
      **/
     this.addEmails = function(msg, block, callback) {
         var self = this;
@@ -204,8 +223,12 @@ var user = module.exports = {
 
     /**
      *  user#deleteEmails(msg, callback) -> null
-     *
-     *  No params.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  No params, simply pass an empty Object literal `{}`
      **/
     this.deleteEmails = function(msg, block, callback) {
         var self = this;
@@ -239,11 +262,14 @@ var user = module.exports = {
 
     /**
      *  user#getFollowers(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getFollowers = function(msg, block, callback) {
         var self = this;
@@ -277,11 +303,14 @@ var user = module.exports = {
 
     /**
      *  user#getFollowingFromUser(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getFollowingFromUser = function(msg, block, callback) {
         var self = this;
@@ -315,10 +344,13 @@ var user = module.exports = {
 
     /**
      *  user#getFollowing(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getFollowing = function(msg, block, callback) {
         var self = this;
@@ -352,11 +384,14 @@ var user = module.exports = {
 
     /**
      *  user#getFollowUser(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getFollowUser = function(msg, block, callback) {
         var self = this;
@@ -390,9 +425,12 @@ var user = module.exports = {
 
     /**
      *  user#followUser(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
      **/
     this.followUser = function(msg, block, callback) {
         var self = this;
@@ -426,9 +464,12 @@ var user = module.exports = {
 
     /**
      *  user#unFollowUser(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
      **/
     this.unFollowUser = function(msg, block, callback) {
         var self = this;
@@ -462,10 +503,13 @@ var user = module.exports = {
 
     /**
      *  user#getKeys(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getKeys = function(msg, block, callback) {
         var self = this;
@@ -499,9 +543,12 @@ var user = module.exports = {
 
     /**
      *  user#getKey(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getKey = function(msg, block, callback) {
         var self = this;
@@ -535,10 +582,13 @@ var user = module.exports = {
 
     /**
      *  user#createKey(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param title (String): Required. 
-     *    - Param key (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - title (String): Required. 
+     *  - key (String): Required. 
      **/
     this.createKey = function(msg, block, callback) {
         var self = this;
@@ -572,11 +622,14 @@ var user = module.exports = {
 
     /**
      *  user#updateKey(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
-     *    - Param title (String): Required. 
-     *    - Param key (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
+     *  - title (String): Required. 
+     *  - key (String): Required. 
      **/
     this.updateKey = function(msg, block, callback) {
         var self = this;
@@ -610,9 +663,12 @@ var user = module.exports = {
 
     /**
      *  user#deleteKey(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
      **/
     this.deleteKey = function(msg, block, callback) {
         var self = this;

@@ -1,11 +1,15 @@
 /**
- * Copyright 2012 Ajax.org Services B.V.
+ *  class <%name%>
+ * 
+ *  <%description%>
+ * 
+ *  Copyright 2012 Ajax.org Services B.V.
  *
- * This product includes software developed by
- * Ajax.org Services B.V. (http://www.ajax.org/).
+ *  This product includes software developed by
+ *  Ajax.org Services B.V. (http://www.ajax.org/).
  *
- * Author: Mike de Boer <mike@ajax.org>
- */
+ *  Author: Mike de Boer <mike@ajax.org>
+ **/
 
 "use strict";
 

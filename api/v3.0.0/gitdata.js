@@ -1,11 +1,13 @@
-/**
- * Copyright 2012 Cloud9 IDE, Inc.
+/** 
+ *  mixin gitdata
+ * 
+ *  Copyright 2012 Cloud9 IDE, Inc.
  *
- * This product includes software developed by
- * Cloud9 IDE, Inc (http://c9.io).
+ *  This product includes software developed by
+ *  Cloud9 IDE, Inc (http://c9.io).
  *
- * Author: Mike de Boer <mike@c9.io>
- */
+ *  Author: Mike de Boer <mike@c9.io>
+ **/
 
 "use strict";
 
@@ -19,13 +21,16 @@ var gitdata = module.exports = {
 (function() {
     /**
      *  gitdata#getBlob(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param sha (String): Required. 
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - sha (String): Required. 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getBlob = function(msg, block, callback) {
         var self = this;
@@ -59,12 +64,15 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#createBlob(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param content (String): Required. 
-     *    - Param encoding (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - content (String): Required. 
+     *  - encoding (String): Required. 
      **/
     this.createBlob = function(msg, block, callback) {
         var self = this;
@@ -98,11 +106,14 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#getCommit(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param sha (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - sha (String): Required. 
      **/
     this.getCommit = function(msg, block, callback) {
         var self = this;
@@ -136,15 +147,18 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#createCommit(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param message (String): Required. String of the commit message 
-     *    - Param tree (String): Required. String of the SHA of the tree object this commit points to 
-     *    - Param parents (Array): Required. Array of the SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided, for a merge commit, an array of more than one should be provided. 
-     *    - Param author (Json): Optional. 
-     *    - Param committer (Json): Optional. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - message (String): Required. String of the commit message 
+     *  - tree (String): Required. String of the SHA of the tree object this commit points to 
+     *  - parents (Array): Required. Array of the SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided, for a merge commit, an array of more than one should be provided. 
+     *  - author (Json): Optional. 
+     *  - committer (Json): Optional. 
      **/
     this.createCommit = function(msg, block, callback) {
         var self = this;
@@ -178,11 +192,14 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#getReference(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param ref (String): Required. String of the name of the fully qualified reference (ie: refs/heads/master). If it doesn’t start with ‘refs’ and have at least two slashes, it will be rejected. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - ref (String): Required. String of the name of the fully qualified reference (ie: refs/heads/master). If it doesn’t start with ‘refs’ and have at least two slashes, it will be rejected. 
      **/
     this.getReference = function(msg, block, callback) {
         var self = this;
@@ -216,12 +233,15 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#getAllReferences(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getAllReferences = function(msg, block, callback) {
         var self = this;
@@ -255,12 +275,15 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#createReference(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param refs (String): Required. String of the name of the fully qualified reference (ie: refs/heads/master). If it doesn’t start with ‘refs’ and have at least two slashes, it will be rejected. 
-     *    - Param sha (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - refs (String): Required. String of the name of the fully qualified reference (ie: refs/heads/master). If it doesn’t start with ‘refs’ and have at least two slashes, it will be rejected. 
+     *  - sha (String): Required. 
      **/
     this.createReference = function(msg, block, callback) {
         var self = this;
@@ -294,12 +317,15 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#updateReference(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param sha (String): Required. 
-     *    - Param force (Boolean): Required. Boolean indicating whether to force the update or to make sure the update is a fast-forward update. The default is false, so leaving this out or setting it to false will make sure you’re not overwriting work. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - sha (String): Required. 
+     *  - force (Boolean): Required. Boolean indicating whether to force the update or to make sure the update is a fast-forward update. The default is false, so leaving this out or setting it to false will make sure you’re not overwriting work. 
      **/
     this.updateReference = function(msg, block, callback) {
         var self = this;
@@ -333,11 +359,14 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#getTag(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param sha (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - sha (String): Required. 
      **/
     this.getTag = function(msg, block, callback) {
         var self = this;
@@ -371,17 +400,20 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#createTag(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param tag (String): Required. String of the tag 
-     *    - Param message (String): Required. String of the tag message 
-     *    - Param object (String): Required. String of the SHA of the git object this is tagging 
-     *    - Param type (String): Required. String of the type of the object we’re tagging. Normally this is a commit but it can also be a tree or a blob. 
-     *    - Param tagger.name (String): Required. String of the name of the author of the tag 
-     *    - Param tagger.email (String): Required. String of the email of the author of the tag 
-     *    - Param tagger.date (String): Required. Timestamp of when this object was tagged 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - tag (String): Required. String of the tag 
+     *  - message (String): Required. String of the tag message 
+     *  - object (String): Required. String of the SHA of the git object this is tagging 
+     *  - type (String): Required. String of the type of the object we’re tagging. Normally this is a commit but it can also be a tree or a blob. 
+     *  - tagger.name (String): Required. String of the name of the author of the tag 
+     *  - tagger.email (String): Required. String of the email of the author of the tag 
+     *  - tagger.date (String): Required. Timestamp of when this object was tagged 
      **/
     this.createTag = function(msg, block, callback) {
         var self = this;
@@ -415,12 +447,15 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#getTree(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param sha (String): Required. 
-     *    - Param recursive (Boolean): Optional. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - sha (String): Required. 
+     *  - recursive (Boolean): Optional. 
      **/
     this.getTree = function(msg, block, callback) {
         var self = this;
@@ -454,11 +489,14 @@ var gitdata = module.exports = {
 
     /**
      *  gitdata#createTree(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
-     *    - Param tree (Json): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
+     *  - tree (Json): Required. 
      **/
     this.createTree = function(msg, block, callback) {
         var self = this;

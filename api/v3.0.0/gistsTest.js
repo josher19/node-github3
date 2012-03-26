@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012 Cloud9 IDE, Inc.
  *
  * This product includes software developed by

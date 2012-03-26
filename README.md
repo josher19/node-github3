@@ -16,6 +16,13 @@ or
       $ cd node-github3
       $ npm install
 
+## Documentation
+
+You can find the docs for the API of this client at [http://c9.github.com/node-github3/](http://c9.github.com/node-github3/)
+
+Additionally, the [official Github documentation](http://developer.github.com/) 
+is a very useful resource.
+
 ## Example
 
 Print all followers of the user "mikedeboer" to the console.

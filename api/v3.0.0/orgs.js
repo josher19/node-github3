@@ -1,11 +1,13 @@
-/**
- * Copyright 2012 Cloud9 IDE, Inc.
+/** 
+ *  mixin orgs
+ * 
+ *  Copyright 2012 Cloud9 IDE, Inc.
  *
- * This product includes software developed by
- * Cloud9 IDE, Inc (http://c9.io).
+ *  This product includes software developed by
+ *  Cloud9 IDE, Inc (http://c9.io).
  *
- * Author: Mike de Boer <mike@c9.io>
- */
+ *  Author: Mike de Boer <mike@c9.io>
+ **/
 
 "use strict";
 
@@ -19,11 +21,14 @@ var orgs = module.exports = {
 (function() {
     /**
      *  orgs#getFromUser(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param user (String): Required. 
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - user (String): Required. 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getFromUser = function(msg, block, callback) {
         var self = this;
@@ -57,11 +62,14 @@ var orgs = module.exports = {
 
     /**
      *  orgs#get(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.get = function(msg, block, callback) {
         var self = this;
@@ -95,14 +103,17 @@ var orgs = module.exports = {
 
     /**
      *  orgs#update(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
-     *    - Param billing_email (String): Optional. Optional string - Billing email address. This address is not publicized. 
-     *    - Param company (String): Optional. 
-     *    - Param email (String): Optional. Optional string - Publicly visible email address. 
-     *    - Param location (String): Optional. 
-     *    - Param name (String): Optional. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
+     *  - billing_email (String): Optional. Optional string - Billing email address. This address is not publicized. 
+     *  - company (String): Optional. 
+     *  - email (String): Optional. Optional string - Publicly visible email address. 
+     *  - location (String): Optional. 
+     *  - name (String): Optional. 
      **/
     this.update = function(msg, block, callback) {
         var self = this;
@@ -136,11 +147,14 @@ var orgs = module.exports = {
 
     /**
      *  orgs#getMembers(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getMembers = function(msg, block, callback) {
         var self = this;
@@ -174,10 +188,13 @@ var orgs = module.exports = {
 
     /**
      *  orgs#getMember(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
+     *  - user (String): Required. 
      **/
     this.getMember = function(msg, block, callback) {
         var self = this;
@@ -211,10 +228,13 @@ var orgs = module.exports = {
 
     /**
      *  orgs#removeMember(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
+     *  - user (String): Required. 
      **/
     this.removeMember = function(msg, block, callback) {
         var self = this;
@@ -248,9 +268,12 @@ var orgs = module.exports = {
 
     /**
      *  orgs#getPublicMembers(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
      **/
     this.getPublicMembers = function(msg, block, callback) {
         var self = this;
@@ -284,10 +307,13 @@ var orgs = module.exports = {
 
     /**
      *  orgs#getPublicMember(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
+     *  - user (String): Required. 
      **/
     this.getPublicMember = function(msg, block, callback) {
         var self = this;
@@ -321,10 +347,13 @@ var orgs = module.exports = {
 
     /**
      *  orgs#publicizeMembership(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
+     *  - user (String): Required. 
      **/
     this.publicizeMembership = function(msg, block, callback) {
         var self = this;
@@ -358,10 +387,13 @@ var orgs = module.exports = {
 
     /**
      *  orgs#concealMembership(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
+     *  - user (String): Required. 
      **/
     this.concealMembership = function(msg, block, callback) {
         var self = this;
@@ -395,9 +427,12 @@ var orgs = module.exports = {
 
     /**
      *  orgs#getTeams(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
      **/
     this.getTeams = function(msg, block, callback) {
         var self = this;
@@ -431,9 +466,12 @@ var orgs = module.exports = {
 
     /**
      *  orgs#getTeam(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getTeam = function(msg, block, callback) {
         var self = this;
@@ -467,12 +505,15 @@ var orgs = module.exports = {
 
     /**
      *  orgs#createTeam(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param org (String): Required. 
-     *    - Param name (String): Required. 
-     *    - Param repo_names (Array): Optional. Optional array of strings 
-     *    - Param permission (String): Optional. `pull` - team members can pull, but not push or administer this repositories (Default), `push` - team members can pull and push, but not administer this repositores, `admin` - team members can pull, push and administer these repositories. Validation rule: ^(pull|push|admin)$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - org (String): Required. 
+     *  - name (String): Required. 
+     *  - repo_names (Array): Optional. Optional array of strings 
+     *  - permission (String): Optional. `pull` - team members can pull, but not push or administer this repositories (Default), `push` - team members can pull and push, but not administer this repositores, `admin` - team members can pull, push and administer these repositories. Validation rule: ` ^(pull|push|admin)$ `.
      **/
     this.createTeam = function(msg, block, callback) {
         var self = this;
@@ -506,11 +547,14 @@ var orgs = module.exports = {
 
     /**
      *  orgs#updateTeam(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
-     *    - Param name (String): Required. 
-     *    - Param permission (String): Optional. `pull` - team members can pull, but not push or administer this repositories (Default), `push` - team members can pull and push, but not administer this repositores, `admin` - team members can pull, push and administer these repositories. Validation rule: ^(pull|push|admin)$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
+     *  - name (String): Required. 
+     *  - permission (String): Optional. `pull` - team members can pull, but not push or administer this repositories (Default), `push` - team members can pull and push, but not administer this repositores, `admin` - team members can pull, push and administer these repositories. Validation rule: ` ^(pull|push|admin)$ `.
      **/
     this.updateTeam = function(msg, block, callback) {
         var self = this;
@@ -544,9 +588,12 @@ var orgs = module.exports = {
 
     /**
      *  orgs#deleteTeam(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
      **/
     this.deleteTeam = function(msg, block, callback) {
         var self = this;
@@ -580,11 +627,14 @@ var orgs = module.exports = {
 
     /**
      *  orgs#getTeamMembers(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getTeamMembers = function(msg, block, callback) {
         var self = this;
@@ -618,10 +668,13 @@ var orgs = module.exports = {
 
     /**
      *  orgs#getTeamMember(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
+     *  - user (String): Required. 
      **/
     this.getTeamMember = function(msg, block, callback) {
         var self = this;
@@ -655,10 +708,13 @@ var orgs = module.exports = {
 
     /**
      *  orgs#addTeamMember(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
+     *  - user (String): Required. 
      **/
     this.addTeamMember = function(msg, block, callback) {
         var self = this;
@@ -692,10 +748,13 @@ var orgs = module.exports = {
 
     /**
      *  orgs#deleteTeamMember(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
-     *    - Param user (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
+     *  - user (String): Required. 
      **/
     this.deleteTeamMember = function(msg, block, callback) {
         var self = this;
@@ -729,11 +788,14 @@ var orgs = module.exports = {
 
     /**
      *  orgs#getTeamRepos(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
-     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
-     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
+     *  - page (Number): Optional. Page number of the results to fetch. Validation rule: ` ^[0-9]+$ `.
+     *  - per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ` ^[0-9]+$ `.
      **/
     this.getTeamRepos = function(msg, block, callback) {
         var self = this;
@@ -767,11 +829,14 @@ var orgs = module.exports = {
 
     /**
      *  orgs#getTeamRepo(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
      **/
     this.getTeamRepo = function(msg, block, callback) {
         var self = this;
@@ -805,11 +870,14 @@ var orgs = module.exports = {
 
     /**
      *  orgs#addTeamRepo(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
      **/
     this.addTeamRepo = function(msg, block, callback) {
         var self = this;
@@ -843,11 +911,14 @@ var orgs = module.exports = {
 
     /**
      *  orgs#deleteTeamRepo(msg, callback) -> null
-     *
-     *  Params on the `msg` object:
-     *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
-     *    - Param user (String): Required. 
-     *    - Param repo (String): Required. 
+     *      - msg (Object): Object that contains the parameters and their values to be sent to the server.
+     *      - callback (Function): function to call when the request is finished with an error as first argument and result data as second argument.
+     * 
+     *  ##### Params on the `msg` object:
+     * 
+     *  - id (Number): Required. Validation rule: ` ^[0-9]+$ `.
+     *  - user (String): Required. 
+     *  - repo (String): Required. 
      **/
     this.deleteTeamRepo = function(msg, block, callback) {
         var self = this;

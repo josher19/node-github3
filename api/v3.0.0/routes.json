@@ -1,6 +1,8 @@
 {
     "defines": {
         "constants": {
+            "name": "Github",
+            "description": "A Node.JS module, which provides an object oriented wrapper for the GitHub v3 API.",
             "protocol": "https",
             "host": "api.github.com",
             "port": 443,

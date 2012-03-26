@@ -41,20 +41,23 @@ var main = module.exports = function(versions) {
             var comment = [
                 indent + "/**",
                 indent + " *  " + section + "#" + funcName + "(msg, callback) -> null",
-                indent + " *",
-                (params.length 
-                    ? indent + " *  Params on the `msg` object:" 
-                    : indent + " *  No params."
-                )
+                indent + " *      - msg (Object): Object that contains the parameters and their values to be sent to the server.",
+                indent + " *      - callback (Function): function to call when the request is finished " +
+                    "with an error as first argument and result data as second argument.",
+                indent + " * ",
+                indent + " *  ##### Params on the `msg` object:",
+                indent + " * "
             ];
+            if (!params.length)
+                comment.push(indent + " *  No params, simply pass an empty Object literal `{}`");
             var paramName, def, line;
             for (var i = 0, l = params.length; i < l; ++i) {
                 paramName = params[i];
                 if (paramName.charAt(0) == "$") {
                     paramName = paramName.substr(1);
                     if (!defines.params[paramName]) {
-                        Util.log("Invalid variable parameter name substitution; param '" + paramName 
-                            + "' not found in defines block", "fatal");
+                        Util.log("Invalid variable parameter name substitution; param '" + 
+                            paramName + "' not found in defines block", "fatal");
                         process.exit(1);
                     }
                     else
@@ -63,12 +66,12 @@ var main = module.exports = function(versions) {
                 else
                     def = paramsStruct[paramName];
 
-                line = indent + " *    - Param " + paramName + " (" + (def.type || "mixed") + "): " +
+                line = indent + " *  - " + paramName + " (" + (def.type || "mixed") + "): " +
                     (def.required ? "Required. " : "Optional. ");
                 if (def.description)
                     line += def.description + " ";
                 if (def.validation)
-                    line += "Validation rule: " + def.validation + ".";
+                    line += "Validation rule: ` " + def.validation + " `.";
 
                 comment.push(line);
             }
@@ -160,7 +163,10 @@ var main = module.exports = function(versions) {
         
         Util.log("Writing index.js file for version " + version);
         Fs.writeFileSync(dir + "/index.js", 
-            IndexTpl.replace("<%scripts%>", "\"" + sectionNames.join("\", \"") + "\""),
+            IndexTpl
+                .replace("<%name%>", defines.constants.name)
+                .replace("<%description%>", defines.constants.description)
+                .replace("<%scripts%>", "\"" + sectionNames.join("\", \"") + "\""),
             "utf8");
         
         Object.keys(sections).forEach(function(section) {

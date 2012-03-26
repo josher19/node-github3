@@ -20,7 +20,9 @@ var events = module.exports = {
     /**
      *  events#get(msg, callback) -> null
      *
-     *  No params.
+     *  Params on the `msg` object:
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.get = function(msg, block, callback) {
         var self = this;
@@ -58,6 +60,8 @@ var events = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromRepo = function(msg, block, callback) {
         var self = this;
@@ -95,6 +99,8 @@ var events = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromRepoIssues = function(msg, block, callback) {
         var self = this;
@@ -132,6 +138,8 @@ var events = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromRepoNetwork = function(msg, block, callback) {
         var self = this;
@@ -168,6 +176,8 @@ var events = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param org (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromOrg = function(msg, block, callback) {
         var self = this;
@@ -204,6 +214,8 @@ var events = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getReceived = function(msg, block, callback) {
         var self = this;
@@ -240,6 +252,8 @@ var events = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getReceivedPublic = function(msg, block, callback) {
         var self = this;
@@ -276,6 +290,8 @@ var events = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromUser = function(msg, block, callback) {
         var self = this;
@@ -312,6 +328,8 @@ var events = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromUserPublic = function(msg, block, callback) {
         var self = this;
@@ -349,6 +367,8 @@ var events = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param org (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromUserOrg = function(msg, block, callback) {
         var self = this;

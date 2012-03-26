@@ -33,7 +33,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                sha: "String"
+                sha: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -137,7 +139,9 @@ var test = module.exports = {
         this.client.gitdata.getAllReferences(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);

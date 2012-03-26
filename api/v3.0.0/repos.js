@@ -22,6 +22,8 @@ var repos = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param type (String): Optional. Possible values: `all`, `owner`, `public`, `private`, `member`. Default: `all`. Validation rule: ^(all|owner|public|private|member)$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getAll = function(msg, block, callback) {
         var self = this;
@@ -59,6 +61,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param type (String): Optional. Possible values: `all`, `owner`, `member`. Default: `public`. Validation rule: ^(all|owner|member)$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromUser = function(msg, block, callback) {
         var self = this;
@@ -96,6 +100,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param org (String): Required. 
      *    - Param type (String): Optional. Possible values: `all`, `public``, `member`. Default: `all`. Validation rule: ^(all|public|member)$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromOrg = function(msg, block, callback) {
         var self = this;
@@ -301,6 +307,8 @@ var repos = module.exports = {
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
      *    - Param anon (Boolean): Optional. Optional flag. Set to 1 or true to include anonymous contributors in results. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getContributors = function(msg, block, callback) {
         var self = this;
@@ -338,6 +346,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getLanguages = function(msg, block, callback) {
         var self = this;
@@ -375,6 +385,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getTeams = function(msg, block, callback) {
         var self = this;
@@ -412,6 +424,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getTags = function(msg, block, callback) {
         var self = this;
@@ -449,6 +463,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getBranches = function(msg, block, callback) {
         var self = this;
@@ -486,6 +502,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getCollaborators = function(msg, block, callback) {
         var self = this;
@@ -639,6 +657,8 @@ var repos = module.exports = {
      *    - Param repo (String): Required. 
      *    - Param sha (String): Optional. Optional string - Sha or branch to start listing commits from. 
      *    - Param path (String): Optional. Optional string - Only commits containing this file path will be returned. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getCommits = function(msg, block, callback) {
         var self = this;
@@ -714,6 +734,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getAllCommitComments = function(msg, block, callback) {
         var self = this;
@@ -752,6 +774,8 @@ var repos = module.exports = {
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
      *    - Param sha (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getCommitComments = function(msg, block, callback) {
         var self = this;
@@ -986,6 +1010,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getDownloads = function(msg, block, callback) {
         var self = this;
@@ -1100,6 +1126,8 @@ var repos = module.exports = {
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
      *    - Param sort (String): Optional. Possible values: `newest`, `oldest`, `watchers`, default: `newest`. Validation rule: ^(newest|oldest|watchers)$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getForks = function(msg, block, callback) {
         var self = this;
@@ -1175,6 +1203,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getKeys = function(msg, block, callback) {
         var self = this;
@@ -1367,6 +1397,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getWatchers = function(msg, block, callback) {
         var self = this;
@@ -1401,7 +1433,9 @@ var repos = module.exports = {
     /**
      *  repos#getWatched(msg, callback) -> null
      *
-     *  No params.
+     *  Params on the `msg` object:
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getWatched = function(msg, block, callback) {
         var self = this;
@@ -1438,6 +1472,8 @@ var repos = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getWatchedFromUser = function(msg, block, callback) {
         var self = this;
@@ -1475,6 +1511,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getWatching = function(msg, block, callback) {
         var self = this;
@@ -1586,6 +1624,8 @@ var repos = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getHooks = function(msg, block, callback) {
         var self = this;

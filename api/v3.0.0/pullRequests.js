@@ -24,6 +24,8 @@ var pullRequests = module.exports = {
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
      *    - Param state (String): Optional. Validation rule: ^(open|closed)$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getAll = function(msg, block, callback) {
         var self = this;
@@ -222,6 +224,8 @@ var pullRequests = module.exports = {
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
      *    - Param number (Number): Required. Validation rule: ^[0-9]+$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getCommits = function(msg, block, callback) {
         var self = this;
@@ -260,6 +264,8 @@ var pullRequests = module.exports = {
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
      *    - Param number (Number): Required. Validation rule: ^[0-9]+$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFiles = function(msg, block, callback) {
         var self = this;
@@ -298,6 +304,8 @@ var pullRequests = module.exports = {
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
      *    - Param number (Number): Required. Validation rule: ^[0-9]+$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getMerged = function(msg, block, callback) {
         var self = this;
@@ -375,6 +383,8 @@ var pullRequests = module.exports = {
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
      *    - Param number (Number): Required. Validation rule: ^[0-9]+$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getComments = function(msg, block, callback) {
         var self = this;

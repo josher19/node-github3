@@ -31,7 +31,9 @@ var test = module.exports = {
         });
         this.client.repos.getAll(
             {
-                type: "String"
+                type: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -50,7 +52,9 @@ var test = module.exports = {
         this.client.repos.getFromUser(
             {
                 user: "String",
-                type: "String"
+                type: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -69,7 +73,9 @@ var test = module.exports = {
         this.client.repos.getFromOrg(
             {
                 org: "String",
-                type: "String"
+                type: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -184,7 +190,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                anon: "Boolean"
+                anon: "Boolean",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -203,7 +211,9 @@ var test = module.exports = {
         this.client.repos.getLanguages(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -222,7 +232,9 @@ var test = module.exports = {
         this.client.repos.getTeams(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -241,7 +253,9 @@ var test = module.exports = {
         this.client.repos.getTags(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -260,7 +274,9 @@ var test = module.exports = {
         this.client.repos.getBranches(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -279,7 +295,9 @@ var test = module.exports = {
         this.client.repos.getCollaborators(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -360,7 +378,9 @@ var test = module.exports = {
                 user: "String",
                 repo: "String",
                 sha: "String",
-                path: "String"
+                path: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -399,7 +419,9 @@ var test = module.exports = {
         this.client.repos.getAllCommitComments(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -419,7 +441,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                sha: "String"
+                sha: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -545,7 +569,9 @@ var test = module.exports = {
         this.client.repos.getDownloads(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -605,7 +631,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                sort: "String"
+                sort: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -644,7 +672,9 @@ var test = module.exports = {
         this.client.repos.getKeys(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -746,7 +776,9 @@ var test = module.exports = {
         this.client.repos.getWatchers(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -763,7 +795,10 @@ var test = module.exports = {
             token: token
         });
         this.client.repos.getWatched(
-            {},
+            {
+                page: "Number",
+                per_page: "Number"
+            },
             function(err, res) {
                 Assert.equal(err, null);
                 // other assertions go here
@@ -780,7 +815,9 @@ var test = module.exports = {
         });
         this.client.repos.getWatchedFromUser(
             {
-                user: "String"
+                user: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -799,7 +836,9 @@ var test = module.exports = {
         this.client.repos.getWatching(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -808,7 +847,7 @@ var test = module.exports = {
         );
     },
 
-    "test: GET /user/watched/:user/:repo (watch)":  function(next) {
+    "test: PUT /user/watched/:user/:repo (watch)":  function(next) {
         var self = this;
         this.client.authenticate({
             type: "token",
@@ -856,7 +895,9 @@ var test = module.exports = {
         this.client.repos.getHooks(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);

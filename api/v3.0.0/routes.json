@@ -222,6 +222,20 @@
                 "validation": "",
                 "invalidmsg": "",
                 "description": ""
+            },
+            "page": {
+                "type": "Number",
+                "required": false,
+                "validation": "^[0-9]+$",
+                "invalidmsg": "",
+                "description": "Page number of the results to fetch."
+            },
+            "per_page": {
+                "type": "Number",
+                "required": false,
+                "validation": "^[0-9]+$",
+                "invalidmsg": "",
+                "description": "A custom page size up to 100. Default is 30."
             }
         }
     },
@@ -230,14 +244,19 @@
         "get-all": {
             "url": "/gists",
             "method": "GET",
-            "params": {}
+            "params": {
+                "$page": null,
+                "$per_page": null
+            }
         },
         
         "get-from-user": {
             "url": ":user/gists",
             "method": "GET",
             "params": {
-                "$user": null
+                "$user": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -335,7 +354,9 @@
             "params": {
                 "$user": null,
                 "$repo": null,
-                "$sha": null
+                "$sha": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -431,7 +452,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -599,7 +622,9 @@
                     "description": ""
                 },
                 "$direction": null,
-                "$since": null
+                "$since": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -646,7 +671,9 @@
                     "description": ""
                 },
                 "$direction": null,
-                "$since": null
+                "$since": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -755,7 +782,9 @@
             "params": {
                 "$user": null,
                 "$repo": null,
-                "$number": null
+                "$number": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -819,7 +848,9 @@
             "params": {
                 "$user": null,
                 "$repo": null,
-                "$number": null
+                "$number": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -828,7 +859,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -896,7 +929,9 @@
                     "validation": "^(due_date|completeness)$",
                     "invalidmsg": "due_date, completeness, default: due_date",
                     "description": "due_date, completeness, default: due_date"
-                }
+                },
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -977,7 +1012,9 @@
             "url": "/users/:user/orgs",
             "method": "GET",
             "params": {
-                "$user": null
+                "$user": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -985,7 +1022,9 @@
             "url": "/orgs/:org",
             "method": "GET",
             "params": {
-                "$org": null
+                "$org": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1036,7 +1075,9 @@
             "url": "/orgs/:org/members",
             "method": "GET",
             "params": {
-                "$org": null
+                "$org": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1148,7 +1189,9 @@
             "url": "/teams/:id/members",
             "method": "GET",
             "params": {
-                "$id": null
+                "$id": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1183,7 +1226,9 @@
             "url": "/teams/:id/repos",
             "method": "GET",
             "params": {
-                "$id": null
+                "$id": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1225,7 +1270,9 @@
             "params": {
                 "$user": null,
                 "$repo": null,
-                "$state": null
+                "$state": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1313,7 +1360,9 @@
             "params": {
                 "$user": null,
                 "$repo": null,
-                "$number": null
+                "$number": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1323,7 +1372,9 @@
             "params": {
                 "$user": null,
                 "$repo": null,
-                "$number": null
+                "$number": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1333,7 +1384,9 @@
             "params": {
                 "$user": null,
                 "$repo": null,
-                "$number": null
+                "$number": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1360,7 +1413,9 @@
             "params": {
                 "$user": null,
                 "$repo": null,
-                "$number": null
+                "$number": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1439,7 +1494,9 @@
                     "validation": "^(all|owner|public|private|member)$",
                     "invalidmsg": "Possible values: `all`, `owner`, `public`, `private`, `member`. Default: `all`.",
                     "description": "Possible values: `all`, `owner`, `public`, `private`, `member`. Default: `all`."
-                }
+                },
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1454,7 +1511,9 @@
                     "validation": "^(all|owner|member)$",
                     "invalidmsg": "Possible values: `all`, `owner`, `member`. Default: `public`.",
                     "description": "Possible values: `all`, `owner`, `member`. Default: `public`."
-                }
+                },
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1469,7 +1528,9 @@
                     "validation": "^(all|public|member)$",
                     "invalidmsg": "Possible values: `all`, `public``, `member`. Default: `all`.",
                     "description": "Possible values: `all`, `public``, `member`. Default: `all`."
-                }
+                },
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1545,7 +1606,9 @@
                     "validation": "",
                     "invalidmsg": "",
                     "description": "Optional flag. Set to 1 or true to include anonymous contributors in results."
-                }
+                },
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1554,7 +1617,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1563,7 +1628,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1572,7 +1639,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1581,7 +1650,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1590,7 +1661,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1643,7 +1716,9 @@
                     "validation": "",
                     "invalidmsg": "",
                     "description": "Optional string - Only commits containing this file path will be returned."
-                }
+                },
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1662,7 +1737,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1672,7 +1749,9 @@
             "params": {
                 "$user": null,
                 "$repo": null,
-                "$sha": null
+                "$sha": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1738,7 +1817,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1774,7 +1855,9 @@
                     "validation": "^(newest|oldest|watchers)$",
                     "invalidmsg": "Possible values: `newest`, `oldest`, `watchers`, default: `newest`.",
                     "description": "Possible values: `newest`, `oldest`, `watchers`, default: `newest`."
-                }
+                },
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1799,7 +1882,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1851,21 +1936,28 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
         "get-watched": {
             "url": "/user/watched",
             "method": "GET",
-            "params": {}
+            "params": {
+                "$page": null,
+                "$per_page": null
+            }
         },
         
         "get-watched-from-user": {
             "url": "/users/:user/watched",
             "method": "GET",
             "params": {
-                "$user": null
+                "$user": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -1874,13 +1966,15 @@
             "method": "",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
         "watch": {
             "url": "/user/watched/:user/:repo",
-            "method": "GET",
+            "method": "PUT",
             "params": {
                 "$user": null,
                 "$repo": null
@@ -1901,7 +1995,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -2087,7 +2183,10 @@
         "get-emails": {
             "url": "/user/emails",
             "method": "GET",
-            "params": {}
+            "params": {
+                "$page": null,
+                "$per_page": null
+            }
         },
         
         "add-emails": {
@@ -2106,7 +2205,9 @@
             "url": "/users/:user/followers",
             "method": "GET",
             "params": {
-                "$user": null
+                "$user": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -2114,21 +2215,28 @@
             "url": "/users/:user/following",
             "method": "GET",
             "params": {
-                "$user": null
+                "$user": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
         "get-following": {
             "url": "/user/following",
             "method": "GET",
-            "params": {}
+            "params": {
+                "$page": null,
+                "$per_page": null
+            }
         },
         
         "get-follow-user": {
             "url": "/user/following/:user",
-            "method": "",
+            "method": "GET",
             "params": {
-                "$user": null
+                "$user": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -2142,7 +2250,7 @@
         
         "un-follow-user": {
             "url": "/user/following/:user",
-            "method": "",
+            "method": "DELETE",
             "params": {
                 "$user": null
             }
@@ -2151,7 +2259,10 @@
         "get-keys": {
             "url": "/user/keys",
             "method": "GET",
-            "params": {}
+            "params": {
+                "$page": null,
+                "$per_page": null
+            }
         },
         
         "get-key": {
@@ -2194,7 +2305,10 @@
         "get": {
             "url": "/events",
             "method": "GET",
-            "params": {}
+            "params": {
+                "$page": null,
+                "$per_page": null
+            }
         },
         
         "get-from-repo": {
@@ -2202,7 +2316,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -2211,7 +2327,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -2220,7 +2338,9 @@
             "method": "GET",
             "params": {
                 "$user": null,
-                "$repo": null
+                "$repo": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -2228,7 +2348,9 @@
             "url": "/orgs/:org/events",
             "method": "GET",
             "params": {
-                "$org": null
+                "$org": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -2236,7 +2358,9 @@
             "url": "/users/:user/received_events",
             "method": "GET",
             "params": {
-                "$user": null
+                "$user": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -2244,7 +2368,9 @@
             "url": "/users/:user/received_events/public",
             "method": "GET",
             "params": {
-                "$user": null
+                "$user": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -2252,7 +2378,9 @@
             "url": "/users/:user/events",
             "method": "GET",
             "params": {
-                "$user": null
+                "$user": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
@@ -2260,16 +2388,20 @@
             "url": "/users/:user/events/public",
             "method": "GET",
             "params": {
-                "$user": null
+                "$user": null,
+                "$page": null,
+                "$per_page": null
             }
         },
         
         "get-from-user-org": {
             "url": "/users/:user/events/orgs/:org",
-            "method": "",
+            "method": "GET",
             "params": {
                 "$user": null,
-                "$org": null
+                "$org": null,
+                "$page": null,
+                "$per_page": null
             }
         }
     }

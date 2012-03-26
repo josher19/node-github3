@@ -30,7 +30,10 @@ var test = module.exports = {
             token: token
         });
         this.client.gists.getAll(
-            {},
+            {
+                page: "Number",
+                per_page: "Number"
+            },
             function(err, res) {
                 Assert.equal(err, null);
                 // other assertions go here
@@ -47,7 +50,9 @@ var test = module.exports = {
         });
         this.client.gists.getFromUser(
             {
-                user: "String"
+                user: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);

@@ -133,7 +133,9 @@ var user = module.exports = {
     /**
      *  user#getEmails(msg, callback) -> null
      *
-     *  No params.
+     *  Params on the `msg` object:
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getEmails = function(msg, block, callback) {
         var self = this;
@@ -240,6 +242,8 @@ var user = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFollowers = function(msg, block, callback) {
         var self = this;
@@ -276,6 +280,8 @@ var user = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFollowingFromUser = function(msg, block, callback) {
         var self = this;
@@ -310,7 +316,9 @@ var user = module.exports = {
     /**
      *  user#getFollowing(msg, callback) -> null
      *
-     *  No params.
+     *  Params on the `msg` object:
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFollowing = function(msg, block, callback) {
         var self = this;
@@ -347,6 +355,8 @@ var user = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFollowUser = function(msg, block, callback) {
         var self = this;
@@ -453,7 +463,9 @@ var user = module.exports = {
     /**
      *  user#getKeys(msg, callback) -> null
      *
-     *  No params.
+     *  Params on the `msg` object:
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getKeys = function(msg, block, callback) {
         var self = this;

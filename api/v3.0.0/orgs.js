@@ -22,6 +22,8 @@ var orgs = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromUser = function(msg, block, callback) {
         var self = this;
@@ -58,6 +60,8 @@ var orgs = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param org (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.get = function(msg, block, callback) {
         var self = this;
@@ -135,6 +139,8 @@ var orgs = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param org (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getMembers = function(msg, block, callback) {
         var self = this;
@@ -577,6 +583,8 @@ var orgs = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getTeamMembers = function(msg, block, callback) {
         var self = this;
@@ -724,6 +732,8 @@ var orgs = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param id (Number): Required. Validation rule: ^[0-9]+$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getTeamRepos = function(msg, block, callback) {
         var self = this;

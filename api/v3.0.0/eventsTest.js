@@ -30,7 +30,10 @@ var test = module.exports = {
             token: token
         });
         this.client.events.get(
-            {},
+            {
+                page: "Number",
+                per_page: "Number"
+            },
             function(err, res) {
                 Assert.equal(err, null);
                 // other assertions go here
@@ -48,7 +51,9 @@ var test = module.exports = {
         this.client.events.getFromRepo(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -67,7 +72,9 @@ var test = module.exports = {
         this.client.events.getFromRepoIssues(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -86,7 +93,9 @@ var test = module.exports = {
         this.client.events.getFromRepoNetwork(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -104,7 +113,9 @@ var test = module.exports = {
         });
         this.client.events.getFromOrg(
             {
-                org: "String"
+                org: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -122,7 +133,9 @@ var test = module.exports = {
         });
         this.client.events.getReceived(
             {
-                user: "String"
+                user: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -140,7 +153,9 @@ var test = module.exports = {
         });
         this.client.events.getReceivedPublic(
             {
-                user: "String"
+                user: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -158,7 +173,9 @@ var test = module.exports = {
         });
         this.client.events.getFromUser(
             {
-                user: "String"
+                user: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -176,7 +193,9 @@ var test = module.exports = {
         });
         this.client.events.getFromUserPublic(
             {
-                user: "String"
+                user: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -185,7 +204,7 @@ var test = module.exports = {
         );
     },
 
-    "test:  /users/:user/events/orgs/:org (getFromUserOrg)":  function(next) {
+    "test: GET /users/:user/events/orgs/:org (getFromUserOrg)":  function(next) {
         var self = this;
         this.client.authenticate({
             type: "token",
@@ -195,7 +214,9 @@ var test = module.exports = {
         this.client.events.getFromUserOrg(
             {
                 user: "String",
-                org: "String"
+                org: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);

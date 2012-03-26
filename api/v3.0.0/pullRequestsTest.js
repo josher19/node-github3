@@ -33,7 +33,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                state: "String"
+                state: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -141,7 +143,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                number: "Number"
+                number: "Number",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -161,7 +165,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                number: "Number"
+                number: "Number",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -181,7 +187,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                number: "Number"
+                number: "Number",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -222,7 +230,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                number: "Number"
+                number: "Number",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);

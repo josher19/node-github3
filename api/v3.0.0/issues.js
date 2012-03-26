@@ -27,6 +27,8 @@ var issues = module.exports = {
      *    - Param sort (String): Optional. Validation rule: ^(created|updated|comments)$.
      *    - Param direction (String): Optional. Validation rule: ^(asc|desc)$.
      *    - Param since (Date): Optional. Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getAll = function(msg, block, callback) {
         var self = this;
@@ -72,6 +74,8 @@ var issues = module.exports = {
      *    - Param sort (String): Optional. Validation rule: ^(created|updated|comments)$.
      *    - Param direction (String): Optional. Validation rule: ^(asc|desc)$.
      *    - Param since (Date): Optional. Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.repoIssues = function(msg, block, callback) {
         var self = this;
@@ -233,6 +237,8 @@ var issues = module.exports = {
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
      *    - Param number (Number): Required. Validation rule: ^[0-9]+$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getComments = function(msg, block, callback) {
         var self = this;
@@ -425,6 +431,8 @@ var issues = module.exports = {
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
      *    - Param number (Number): Required. Validation rule: ^[0-9]+$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getEvents = function(msg, block, callback) {
         var self = this;
@@ -462,6 +470,8 @@ var issues = module.exports = {
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
      *    - Param repo (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getRepoEvents = function(msg, block, callback) {
         var self = this;
@@ -692,6 +702,8 @@ var issues = module.exports = {
      *    - Param repo (String): Required. 
      *    - Param state (String): Optional. Validation rule: ^(open|closed)$.
      *    - Param sort (String): Optional. due_date, completeness, default: due_date Validation rule: ^(due_date|completeness)$.
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getAllMilestones = function(msg, block, callback) {
         var self = this;

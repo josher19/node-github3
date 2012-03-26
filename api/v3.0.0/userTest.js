@@ -88,7 +88,10 @@ var test = module.exports = {
             token: token
         });
         this.client.user.getEmails(
-            {},
+            {
+                page: "Number",
+                per_page: "Number"
+            },
             function(err, res) {
                 Assert.equal(err, null);
                 // other assertions go here
@@ -137,7 +140,9 @@ var test = module.exports = {
         });
         this.client.user.getFollowers(
             {
-                user: "String"
+                user: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -155,7 +160,9 @@ var test = module.exports = {
         });
         this.client.user.getFollowingFromUser(
             {
-                user: "String"
+                user: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -172,7 +179,10 @@ var test = module.exports = {
             token: token
         });
         this.client.user.getFollowing(
-            {},
+            {
+                page: "Number",
+                per_page: "Number"
+            },
             function(err, res) {
                 Assert.equal(err, null);
                 // other assertions go here
@@ -180,7 +190,7 @@ var test = module.exports = {
         );
     },
 
-    "test:  /user/following/:user (getFollowUser)":  function(next) {
+    "test: GET /user/following/:user (getFollowUser)":  function(next) {
         var self = this;
         this.client.authenticate({
             type: "token",
@@ -189,7 +199,9 @@ var test = module.exports = {
         });
         this.client.user.getFollowUser(
             {
-                user: "String"
+                user: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -216,7 +228,7 @@ var test = module.exports = {
         );
     },
 
-    "test:  /user/following/:user (unFollowUser)":  function(next) {
+    "test: DELETE /user/following/:user (unFollowUser)":  function(next) {
         var self = this;
         this.client.authenticate({
             type: "token",
@@ -242,7 +254,10 @@ var test = module.exports = {
             token: token
         });
         this.client.user.getKeys(
-            {},
+            {
+                page: "Number",
+                per_page: "Number"
+            },
             function(err, res) {
                 Assert.equal(err, null);
                 // other assertions go here

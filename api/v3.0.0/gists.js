@@ -20,7 +20,9 @@ var gists = module.exports = {
     /**
      *  gists#getAll(msg, callback) -> null
      *
-     *  No params.
+     *  Params on the `msg` object:
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getAll = function(msg, block, callback) {
         var self = this;
@@ -57,6 +59,8 @@ var gists = module.exports = {
      *
      *  Params on the `msg` object:
      *    - Param user (String): Required. 
+     *    - Param page (Number): Optional. Page number of the results to fetch. Validation rule: ^[0-9]+$.
+     *    - Param per_page (Number): Optional. A custom page size up to 100. Default is 30. Validation rule: ^[0-9]+$.
      **/
     this.getFromUser = function(msg, block, callback) {
         var self = this;

@@ -36,7 +36,9 @@ var test = module.exports = {
                 labels: "String",
                 sort: "String",
                 direction: "String",
-                since: "Date"
+                since: "Date",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -63,7 +65,9 @@ var test = module.exports = {
                 labels: "String",
                 sort: "String",
                 direction: "String",
-                since: "Date"
+                since: "Date",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -152,7 +156,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                number: "Number"
+                number: "Number",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -254,7 +260,9 @@ var test = module.exports = {
             {
                 user: "String",
                 repo: "String",
-                number: "Number"
+                number: "Number",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -273,7 +281,9 @@ var test = module.exports = {
         this.client.issues.getRepoEvents(
             {
                 user: "String",
-                repo: "String"
+                repo: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -395,7 +405,9 @@ var test = module.exports = {
                 user: "String",
                 repo: "String",
                 state: "String",
-                sort: "String"
+                sort: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);

@@ -31,7 +31,9 @@ var test = module.exports = {
         });
         this.client.orgs.getFromUser(
             {
-                user: "String"
+                user: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -49,7 +51,9 @@ var test = module.exports = {
         });
         this.client.orgs.get(
             {
-                org: "String"
+                org: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -90,7 +94,9 @@ var test = module.exports = {
         });
         this.client.orgs.getMembers(
             {
-                org: "String"
+                org: "String",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -316,7 +322,9 @@ var test = module.exports = {
         });
         this.client.orgs.getTeamMembers(
             {
-                id: "Number"
+                id: "Number",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);
@@ -391,7 +399,9 @@ var test = module.exports = {
         });
         this.client.orgs.getTeamRepos(
             {
-                id: "Number"
+                id: "Number",
+                page: "Number",
+                per_page: "Number"
             },
             function(err, res) {
                 Assert.equal(err, null);

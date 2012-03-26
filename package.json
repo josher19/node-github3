@@ -1,6 +1,6 @@
 {
     "name" : "node-github",
-    "version" : "0.0.1",
+    "version" : "0.0.2",
     "description" : "Wrapper for the GitHub API",
     "author": "Mike de Boer <mike@c9.io>",
     "homepage": "http://github.com/c9/node-github3",

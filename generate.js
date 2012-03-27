@@ -23,7 +23,7 @@ var TestHandlerTpl = Fs.readFileSync(__dirname + "/templates/test_handler.js", "
 
 var main = module.exports = function(versions) {
     Util.log("Generating for versions", versions);
-    
+
     versions.forEach(function(version) {
         var dir = __dirname + "/api/" + version;
         var routes = JSON.parse(Fs.readFileSync(dir + "/routes.json", "utf8"));
@@ -35,7 +35,7 @@ var main = module.exports = function(versions) {
             headers = headers.map(function(header) { return header.toLowerCase(); });
         var sections = {};
         var testSections = {};
-        
+
         function createComment(paramsStruct, section, funcName, indent) {
             var params = Object.keys(paramsStruct);
             var comment = [
@@ -56,7 +56,7 @@ var main = module.exports = function(versions) {
                 if (paramName.charAt(0) == "$") {
                     paramName = paramName.substr(1);
                     if (!defines.params[paramName]) {
-                        Util.log("Invalid variable parameter name substitution; param '" + 
+                        Util.log("Invalid variable parameter name substitution; param '" +
                             paramName + "' not found in defines block", "fatal");
                         process.exit(1);
                     }
@@ -75,10 +75,10 @@ var main = module.exports = function(versions) {
 
                 comment.push(line);
             }
-            
+
             return comment.join("\n") + "\n" + indent + " **/";
         }
-        
+
         function getParams(paramsStruct, indent) {
             var params = Object.keys(paramsStruct);
             if (!params.length)
@@ -90,7 +90,7 @@ var main = module.exports = function(versions) {
                 if (paramName.charAt(0) == "$") {
                     paramName = paramName.substr(1);
                     if (!defines.params[paramName]) {
-                        Util.log("Invalid variable parameter name substitution; param '" + paramName 
+                        Util.log("Invalid variable parameter name substitution; param '" + paramName
                             + "' not found in defines block", "fatal");
                         process.exit(1);
                     }
@@ -104,7 +104,7 @@ var main = module.exports = function(versions) {
             }
             return "{\n" + values.join(",\n") + "\n" + indent + "}";
         }
-        
+
         function prepareApi(struct, baseType) {
             if (!baseType)
                 baseType = "";
@@ -126,14 +126,14 @@ var main = module.exports = function(versions) {
                     parts.splice(0, 2);
                     var funcName = Util.toCamelCase(parts.join("-"));
                     var comment = createComment(block.params, section, funcName, "    ");
-                    
+
                     // add the handler to the sections
                     if (!sections[section])
                         sections[section] = [];
 
                     var afterRequest = "";
                     if (headers && headers.length) {
-                        afterRequest = AfterRequestTpl.replace("<%headers%>", "\"" + 
+                        afterRequest = AfterRequestTpl.replace("<%headers%>", "\"" +
                             headers.join("\", \"") + "\"");
                     }
                     sections[section].push(HandlerTpl
@@ -141,7 +141,7 @@ var main = module.exports = function(versions) {
                         .replace("<%comment%>", comment)
                         .replace("<%afterRequest%>", afterRequest)
                     );
-                    
+
                     // add test to the testSections
                     if (!testSections[section])
                         testSections[section] = [];
@@ -157,23 +157,21 @@ var main = module.exports = function(versions) {
                 }
             });
         }
-        
+
         Util.log("Converting routes to functions");
         prepareApi(routes);
-        
+
         Util.log("Writing files to version dir");
-        var sectionNames = Object.keys(sections).map(function(name) {
-            return Util.toCamelCase(name);
-        });
-        
+        var sectionNames = Object.keys(sections);
+
         Util.log("Writing index.js file for version " + version);
-        Fs.writeFileSync(dir + "/index.js", 
+        Fs.writeFileSync(dir + "/index.js",
             IndexTpl
                 .replace("<%name%>", defines.constants.name)
                 .replace("<%description%>", defines.constants.description)
                 .replace("<%scripts%>", "\"" + sectionNames.join("\", \"") + "\""),
             "utf8");
-        
+
         Object.keys(sections).forEach(function(section) {
             var def = sections[section];
             Util.log("Writing '" + section + ".js' file for version " + version);
@@ -182,7 +180,7 @@ var main = module.exports = function(versions) {
                 .replace("<%sectionBody%>", def.join("\n")),
                 "utf8"
             );
-            
+
             Util.log("Writing test file for " + section + ", version " + version);
             def = testSections[section];
             Fs.writeFileSync(dir + "/" + section + "Test.js", TestSectionTpl
@@ -222,6 +220,6 @@ if (!module.parent) {
         Util.log("No versions specified via the command line, generating for all available versions.");
         versions = availVersions;
     }
-    
+
     main(versions);
 }
